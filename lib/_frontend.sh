@@ -13,8 +13,8 @@ frontend_node_dependencies() {
 
   sleep 2
 
-  sudo su - deployautomatizaai <<EOF
-  cd /home/deployautomatizaai/whaticket/frontend
+  sudo su - deploywhaticketplus <<EOF
+  cd /home/deploywhaticketplus/whaticket/frontend
   npm install --force
 EOF
  
@@ -37,13 +37,13 @@ frontend_set_env() {
   backend_url=${backend_url%%/*}
   backend_url=https://$backend_url
 
-  sudo su - deployautomatizaai << EOF
-  cat <<[-]EOF > /home/deployautomatizaai/whaticket/frontend/.env
+  sudo su - deploywhaticketplus << EOF
+  cat <<[-]EOF > /home/deploywhaticketplus/whaticket/frontend/.env
 REACT_APP_BACKEND_URL=${backend_url}
 REACT_APP_ENV_TOKEN=210897ugn217204u98u8jfo2983u5
 REACT_APP_HOURS_CLOSE_TICKETS_AUTO=9999999
 REACT_APP_FACEBOOK_APP_ID=1005318707427295
-REACT_APP_NAME_SYSTEM=automatizaai
+REACT_APP_NAME_SYSTEM=whaticketplus
 REACT_APP_VERSION="1.0.0"
 REACT_APP_PRIMARY_COLOR=$#fffff
 REACT_APP_PRIMARY_DARK=2c3145
@@ -54,8 +54,8 @@ WDS_SOCKET_PORT=0
 EOF
 
   # Execute the substitution commands
-  sudo su - deployautomatizaai <<EOF
-  cd /home/deployautomatizaai/whaticket/frontend
+  sudo su - deploywhaticketplus <<EOF
+  cd /home/deploywhaticketplus/whaticket/frontend
 
   BACKEND_URL=${backend_url}
 
@@ -77,8 +77,8 @@ frontend_start_pm2() {
 
   sleep 2
 
-  sudo su - deployautomatizaai <<EOF
-  cd /home/deployautomatizaai/whaticket/frontend
+  sudo su - deploywhaticketplus <<EOF
+  cd /home/deploywhaticketplus/whaticket/frontend
   pm2 start server.js --name whaticket-frontend
   pm2 save
 EOF
@@ -151,19 +151,19 @@ move_whaticket_files() {
   sudo su - root <<EOF
 
 
-  sudo rm -r /home/deployautomatizaai/whaticket/frontend/automatizaai
-  sudo rm -r /home/deployautomatizaai/whaticket/frontend/package.json
-  sudo rm -r /home/deployautomatizaai/whaticket/frontend/package-lock.json
-  sudo rm -r /home/deployautomatizaai/whaticket/backend/automatizaai
-  sudo rm -r /home/deployautomatizaai/whaticket/backend/package.json
-  sudo rm -r /home/deployautomatizaai/whaticket/backend/package-lock.json
-  sudo rm -rf /home/deployautomatizaai/whaticket/frontend/node_modules
-  sudo rm -rf /home/deployautomatizaai/whaticket/backend/node_modules
+  sudo rm -r /home/deploywhaticketplus/whaticket/frontend/whaticketplus
+  sudo rm -r /home/deploywhaticketplus/whaticket/frontend/package.json
+  sudo rm -r /home/deploywhaticketplus/whaticket/frontend/package-lock.json
+  sudo rm -r /home/deploywhaticketplus/whaticket/backend/whaticketplus
+  sudo rm -r /home/deploywhaticketplus/whaticket/backend/package.json
+  sudo rm -r /home/deploywhaticketplus/whaticket/backend/package-lock.json
+  sudo rm -rf /home/deploywhaticketplus/whaticket/frontend/node_modules
+  sudo rm -rf /home/deploywhaticketplus/whaticket/backend/node_modules
 
-  sudo mv /root/whaticket/frontend/automatizaai /home/deployautomatizaai/whaticket/frontend
-  sudo mv /root/whaticket/frontend/package.json /home/deployautomatizaai/whaticket/frontend
-  sudo mv /root/whaticket/backend/automatizaai /home/deployautomatizaai/whaticket/backend
-  sudo mv /root/whaticket/backend/package.json /home/deployautomatizaai/whaticket/backend
+  sudo mv /root/whaticket/frontend/whaticketplus /home/deploywhaticketplus/whaticket/frontend
+  sudo mv /root/whaticket/frontend/package.json /home/deploywhaticketplus/whaticket/frontend
+  sudo mv /root/whaticket/backend/whaticketplus /home/deploywhaticketplus/whaticket/backend
+  sudo mv /root/whaticket/backend/package.json /home/deploywhaticketplus/whaticket/backend
   sudo rm -rf /root/whaticket
   npm cache clean --force
   npm cache clean --force
@@ -189,7 +189,7 @@ frontend_conf1() {
   backend_url=https://$backend_url
 
   sudo su - root <<EOF
-  cd /home/deployautomatizaai/whaticket/frontend
+  cd /home/deploywhaticketplus/whaticket/frontend
 
   BACKEND_URL=${backend_url}
 
@@ -206,8 +206,8 @@ frontend_node_dependencies1() {
 
   sleep 2
 
-  sudo su - deployautomatizaai <<EOF
-  cd /home/deployautomatizaai/whaticket/frontend
+  sudo su - deploywhaticketplus <<EOF
+  cd /home/deploywhaticketplus/whaticket/frontend
   npm install --force
 EOF
 
@@ -221,8 +221,8 @@ frontend_restart_pm2() {
 
   sleep 2
 
-  sudo su - deployautomatizaai <<EOF
-  cd /home/deployautomatizaai/whaticket/frontend
+  sudo su - deploywhaticketplus <<EOF
+  cd /home/deploywhaticketplus/whaticket/frontend
   pm2 stop all
 
   pm2 start all
@@ -238,8 +238,8 @@ backend_node_dependencies1() {
 
   sleep 2
 
-  sudo su - deployautomatizaai <<EOF
-  cd /home/deployautomatizaai/whaticket/backend
+  sudo su - deploywhaticketplus <<EOF
+  cd /home/deploywhaticketplus/whaticket/backend
   npm install --force
 EOF
 
@@ -253,16 +253,16 @@ backend_db_migrate1() {
 
   sleep 2
 
-  sudo su - deployautomatizaai <<EOF
-  cd /home/deployautomatizaai/whaticket/backend
+  sudo su - deploywhaticketplus <<EOF
+  cd /home/deploywhaticketplus/whaticket/backend
   npx sequelize db:migrate
 
 EOF
 
   sleep 2
 
-  sudo su - deployautomatizaai <<EOF
-  cd /home/deployautomatizaai/whaticket/backend
+  sudo su - deploywhaticketplus <<EOF
+  cd /home/deploywhaticketplus/whaticket/backend
   npx sequelize db:migrate
   
 EOF
@@ -277,8 +277,8 @@ backend_restart_pm2() {
 
   sleep 2
 
-  sudo su - deployautomatizaai <<EOF
-    cd /home/deployautomatizaai/whaticket/backend
+  sudo su - deploywhaticketplus <<EOF
+    cd /home/deploywhaticketplus/whaticket/backend
     pm2 stop all
     sudo rm -rf /root/Whaticket-Saas-Completo
 EOF
@@ -286,14 +286,14 @@ EOF
   sleep 2
 
   sudo su - <<EOF
-    usermod -aG sudo deployautomatizaai
+    usermod -aG sudo deploywhaticketplus
 
-    grep -q "^deployautomatizaai ALL=(ALL) NOPASSWD: ALL$" /etc/sudoers || echo "deployautomatizaai ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+    grep -q "^deploywhaticketplus ALL=(ALL) NOPASSWD: ALL$" /etc/sudoers || echo "deploywhaticketplus ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
-    echo "deployautomatizaai ALL=(ALL) NOPASSWD: ALL" | EDITOR='tee -a' visudo
+    echo "deploywhaticketplus ALL=(ALL) NOPASSWD: ALL" | EDITOR='tee -a' visudo
 EOF
 
-  sudo su - deployautomatizaai <<EOF
+  sudo su - deploywhaticketplus <<EOF
     pm2 start all
 EOF
 
