@@ -1,70 +1,129 @@
+<img src="https://i.imgur.com/YOM5F41.png" />
 
-<h1>Whaticket Saas</h1>
+## 🚀 Whaticket Plus
 
-<h3>Instalação</h3>
+Experimente gratuitamente nosso sistema de tickets via WhatsApp e descubra como a integração com DialogFlow, N8N, Typebot, WebHooks, Facebook, Instagram e um podereso Construtor De Fluxos para Chatbot. 
 
-<p>Ubuntu 20.04</p>
-<p>Debian 11</p>
+Desenvolvido por especialistas em automação e atendimento ao cliente, nosso sistema de tickets é recomendado por profissionais que entendem a importância de uma comunicação eficiente. Com integração ao premiado Typebot, N8N e outras ferramentas de ponta, você está em boas mãos.
 
-<code>apt update && apt upgrade -y && apt install sudo git -y && sudo rm -rf WhaticketWorkflow && sudo git clone https://github.com/DEV7Kadu/WhaticketWorkflow.git && cd WhaticketWorkflow && sudo chmod +x ./whaticketplus && ./whaticketplus</code><br />
-&nbsp;</p>
+Sabemos como pode ser desafiador gerenciar múltiplos canais de comunicação. Por isso, nosso sistema de tickets via WhatsApp é projetado para facilitar sua vida, permitindo que você foque no que realmente importa: atender bem seus clientes.
 
-<h3>Whatsapp Suporte: +55 (51) 9957-9150<h3>
+<br /><br />
 
-<h3>Grupo de Suporte: https://encurtador.com.br/Q9Yl5<h3>
-<br/>
+## 📌 Integrações
 
-## Principais Funcionalidades
+<img src="https://i.postimg.cc/CxJmZYZk/Group-26.png" />
 
-- 🤖 <strong>Palavra-Chave:<strong> Ative e alterne entre fluxos automaticamente utilizando palavras-chave.<br><br>
-- 🤖 <strong>Chatbot Inteligente:<strong> Configure seu chatbot por setor para respostas automatizadas.<br><br>
-- 🔗 <strong>Integração Com Sites:<strong> Monitore em tempo real e receba notificações instantâneas sobre os acessos ao seu site! <br><br>
-- 🔗 <strong>Integração Pixel Facebook:<strong> Acompanhe e registre conversões com o pixel do Facebook. <br><br>
-- 🔗 <strong>Integração Webhook:<strong> Utilize webhooks para conectar com outros sistemas e automatizar processos. <br><br>
-- 🔗 <strong>Integração Dialogflow:<strong> Integre com Dialogflow para adicionar funcionalidades avançadas de IA às conversas. <br><br>
-- 🔗 <strong>Integração Typebot:<strong> Integre com Typebot para criação de chatbots personalizados.<br><br>
-- 🔗 <strong>Integração n8n:<strong> Integre com n8n para automação de workflows.<br><br>
-- 🔗 <strong>Integração Asaas:<strong> Integre com Asaas para gestão de cobranças e pagamentos.<br><br>
-- 🔗 <strong>Integração PagHiper:<strong> Integre com PagHiper para buscar boletos.<br><br>
-- 🔊 <strong>Transcrever Áudios:<strong> Converta áudios recebidos em texto.<br><br>
-- 🌟 <strong>Atendimento Organizado:<strong> Adicione vários atendentes e defina por setores para uma gestão organizada.<br><br>
-- 📲 <strong>Adicionar Participantes:<strong> Integre novos participantes facilmente em conversas existentes.<br><br>
-- 📢 <strong>Campanhas Personalizadas:<strong> Crie campanhas com agendamento e utilize variáveis para comunicações personalizadas.<br><br>
-- 🗓️ <strong>Agendamento Recorrente:<strong> Automatize o envio de mensagens agendadas por contatos.<br><br>
-- 📁 <strong>Envio de Arquivos:<strong> Compartilhe imagens, vídeos, documentos e áudios de forma prática.<br><br>
-- 📈 <strong>Gerenciamento de Leads:<strong> Capture leads automaticamente ao receberem contato.<br><br>
-- ✉️ <strong>Mensagens Rápidas:<strong> Crie mensagens pré-configuradas para respostas ágeis.<br><br>
-- 🏷️ <strong>Tags Personalizadas:<strong> Adicione tags para um melhor gerenciamento e organização.<br><br>
-- 💼 <strong>Integração Financeira: Integre com<strong> sistemas de gestão financeira para uma visão completa.<br><br>
-- 🏢 <strong>Gerenciamento Empresarial:<strong> Cadastre múltiplas empresas para uma gestão ampla.<br><br>
+<br /><br />
 
-## Funcionalidades Via Api
+## 🔧 Requisitos
 
-- Enviar Mensagens ✅
-- Criar Empresas ✅
-- Criar Contatos ✅
-- Listar Contatos ✅
-- Atualizar Contatos ✅
-- Excluir Contatos ✅
-- Criar Tags ✅
-- Listar Tags ✅
-- Excluir Tags ✅
-- Criar Agendamento ✅
-- Listar Agendamento ✅
-- Excluir Agendamento ✅
+<img src="https://i.postimg.cc/kGRpDYJC/Group-27.png" style="height: 250px;" />
 
+<nav>
+  <ul>
+    <li>Subdomínio para Frontend: https://app.nomedoseudominio.com</li>
+    <li>Subdomínio para API (Backend): https://api.nomedoseudominio.com</li>
+  </ul>
+</nav>
 
-<h1>Demonstração</h1>
+<br /><br />
 
-![link About do site](https://github.com/andrew890074/WhaticketWorkflow/blob/main/demonstração/flow2.jpeg)
+## 💿 Instalação
 
+```bash
+  apt update && apt upgrade -y && apt install sudo git -y && sudo rm -rf WhaticketPlus && sudo git clone https://github.com/DEV7Kadu/WhaticketPlus && cd WhaticketPlus && sudo chmod +x ./whaticketplus && ./whaticketplus
+```
 
-![link About do site](https://github.com/andrew890074/WhaticketWorkflow/blob/main/demonstração/flow.jpeg)
+<br /><br />
 
-![GIF](demonstração/transcrição.gif)
+## ⭐ Recursos
 
-![GIF](demonstração/video1.gif)
+✨ Dashboard Informando Dados da VPS e Consumo em Tempo Real    
+✨ Integração com o Pixel do Facebook: Acompanhe e registre conversões com o pixel do Facebook    
+✨ Integração com Webhook: Utilize webhooks para conectar com outros sistemas e automatizar processos   
+✨ Construtor De Fluxos Para Chatbot     
+✨ Integração com Site: Poder receber notificações de visitas     
+✨ Atendentes   
+✨ Modo Claro/Escuro    
+✨ Cores Personalizadas  
+✨ Logotipo/Marca Própria  
+✨ Aplicativo PWA  
+✨ Domínio Próprio  
+✨ Cores Personalizadas  
+✨ Logotipo / Marca Própria  
+✨ Aplicativo PWA  
+✨ Dashboard  
+✨ Estatísticas  
+✨ Mensagens Agendadas com Anexo  
+✨ Respostas Rápidas com Anexo  
+✨ Agendamento Recorrente  
+✨ Campanhas Recorrentes  
+✨ Carteira de Cliente  
+✨ Gerenciamento de Grupos  
+✨ Chat Interno  
+✨ Tarefas  
+✨ Campanhas  
+✨ Áudio Gravado na Hora  
+✨ Setores & Filas  
+✨ Recuperação de Senha por E-Mail
 
-![GIF](demonstração/api.gif)
+<br /><br />
 
-![GIF](demonstração/video2.gif)
+## ✅ Recursos via API
+
+🟢 Atualizar Contatos  
+🟢 Atualizar Tickets  
+🟢 Criar Agendamento  
+🟢 Criar Contatos  
+🟢 Criar Empresas  
+🟢 Criar Tags  
+🟢 Enviar Mensagens  
+🟢 Excluir Agendamento  
+🟢 Excluir Contatos  
+🟢 Excluir Tags  
+🟢 Listar Agendamento  
+🟢 Listar Contatos  
+🟢 Listar Tags
+
+<br /><br />
+
+## ⚠️ Isenção de Responsabilidade
+
+Este projeto não é afiliado, associado, autorizado, endossado ou de qualquer forma oficialmente conectado ao WhatsApp ou a qualquer uma de suas subsidiárias ou afiliadas. O site oficial do WhatsApp pode ser encontrado em https://whatsapp.com. “WhatsApp”, bem como nomes, marcas, emblemas e imagens relacionados são marcas registradas de seus respectivos proprietários.
+
+<br /><br />
+
+## 📍 Github
+
+Codigo baseado no Whaticket Community de:
+<nav>
+  <ul>
+    <li><a href="https://github.com/canove/whaticket-community" target="_blank">Cassio Santos no GitHub</a></li>
+
+<br /><br />
+
+## 🛠️ Com as seguintes Ferramentas de Apoio:
+<nav>
+    <li><a href="https://github.com/WhiskeySockets/Baileys" target="_blank">Baileys - WhatsApp Web API</a></li>
+    <li><a href="https://github.com/redis/redis" target="_blank">Redis</a></li>
+    <li><a href="https://github.com/postgres/postgres" target="_blank">PostgreSQL</a></li>
+    <li><a href="https://github.com/docker" target="_blank">Docker</a></li>
+    <li><a href="https://github.com/nginx/nginx" target="_blank">Nginx</a></li>
+    <li><a href="https://github.com/nodejs/node" target="_blank">Node</a></li>
+    <li><a href="https://github.com/Unitech/pm2" target="_blank">PM2</a></li>
+    <li><a href="https://github.com/certbot/certbot" target="_blank">Certbot</a></li>
+  </ul>
+</nav>
+
+<br /><br />
+
+## 🙋 Suporte e Contato
+
+Entre em contato através do <a href="https://wa.me/5551992919891" target="_blank">Whatsapp</a> ou <a href="mailto:whaticketplus@gmail.com" target="_blank">E-mail</a>.
+
+<br /><br />
+
+## 
+
+[![Star History Chart](https://api.star-history.com/svg?repos=DEV7Kadu/WhaticketPlus&type=Date)](https://star-history.com/#DEV7Kadu/WhaticketPlus&Date) 
