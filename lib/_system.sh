@@ -301,7 +301,7 @@ system_set_ufw() {
   sleep 2
 
   sudo su - root <<EOF
-  ufw allow 80/tcp && ufw allow 22/tcp && ufw allow 443/tcp && ufw allow 8080/tcp && ufw allow 8081/tcp && ufw allow 3000/tcp && ufw allow 9005/tcp && ufw allow 3003/tcp && ufw allow 6379/tcp && ufw allow 5432/tcp && ufw allow 443/tcp
+  ufw allow 80/tcp && ufw allow 22/tcp && ufw allow 443/tcp && ufw allow 8080/tcp && ufw allow 8081/tcp && ufw allow 3000/tcp && ufw allow 9005/tcp && ufw allow 3003/tcp && ufw allow 6379/tcp && ufw allow 5432/tcp && ufw allow 443/tcp && ufw allow 9090/tcp
 EOF
 
   sleep 2

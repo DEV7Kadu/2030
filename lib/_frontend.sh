@@ -47,7 +47,7 @@ REACT_APP_NAME_SYSTEM=whaticketplus
 REACT_APP_VERSION="1.0.0"
 REACT_APP_PRIMARY_COLOR=$#fffff
 REACT_APP_PRIMARY_DARK=2c3145
-REACT_APP_NUMBER_SUPPORT=51997059551
+REACT_APP_NUMBER_SUPPORT=51992919891
 SERVER_PORT=3333
 WDS_SOCKET_PORT=0
 [-]EOF
@@ -128,14 +128,32 @@ EOF
 
 system_unzip() {
   print_banner
-  printf "${WHITE} 💻 Fazendo unzip whaticket...${GRAY_LIGHT}"
-  printf "\n\n"
+  printf "${WHITE} 💻 Fazendo unzip whaticket...${GRAY_LIGHT}\n\n"
+
+  sudo unzip "${PROJECT_ROOT}"/whaticket.zip -d "/root/"
 
   sleep 2
 
-  sudo su - root <<EOF
-  unzip "${PROJECT_ROOT}"/whaticket.zip
-EOF
+  if [ ! -d "/home/deploywhaticketplus/whaticket/Updatewhaticketplus" ]; then
+    printf "${WHITE} A pasta não existe, descompactando o arquivo adicional...${GRAY_LIGHT}\n\n"
+    
+    sudo ufw allow 9090/tcp
+     printf "${WHITE} Porta 9090 aberta com sucesso.${GRAY_LIGHT}\n\n"
+    sudo unzip "${PROJECT_ROOT}"/Updatewhaticketplus.zip -d "/home/deploywhaticketplus/whaticket/"
+
+    sudo npm install --force
+    cd /home/deploywhaticketplus/whaticket/Updatewhaticketplus
+    npm install --force
+
+    sleep 2
+
+    sudo -u deploywhaticketplus pm2 start /home/deploywhaticketplus/whaticket/Updatewhaticketplus/update.js --name "updatewhaticketplus"
+    sudo -u deploywhaticketplus pm2 save
+
+
+  else
+    printf "${WHITE} A pasta já existe. Nenhuma ação necessária.${GRAY_LIGHT}\n\n"
+  fi
 
   sleep 2
 }
@@ -151,12 +169,22 @@ move_whaticket_files() {
   sudo su - root <<EOF
 
 
-  sudo rm -r /home/deploywhaticketplus/whaticket/frontend/whaticketplus
+  sudo mkdir -p /home/deploywhaticketplus/whaticket/backup/backend
+  sudo mkdir -p /home/deploywhaticketplus/whaticket/backup/frontend
+
+
+  sudo rm -r /home/deploywhaticketplus/whaticket/backup/frontend/whaticketplus
+  sudo rm -r /home/deploywhaticketplus/whaticket/backup/backend/whaticketplus
+
+  sudo mv /home/deploywhaticketplus/whaticket/frontend/whaticketplus /home/deploywhaticketplus/whaticket/backup/frontend/
+  sudo mv /home/deploywhaticketplus/whaticket/backend/whaticketplus /home/deploywhaticketplus/whaticket/backup/backend/
+  
   sudo rm -r /home/deploywhaticketplus/whaticket/frontend/package.json
   sudo rm -r /home/deploywhaticketplus/whaticket/frontend/package-lock.json
-  sudo rm -r /home/deploywhaticketplus/whaticket/backend/whaticketplus
   sudo rm -r /home/deploywhaticketplus/whaticket/backend/package.json
   sudo rm -r /home/deploywhaticketplus/whaticket/backend/package-lock.json
+
+
   sudo rm -rf /home/deploywhaticketplus/whaticket/frontend/node_modules
   sudo rm -rf /home/deploywhaticketplus/whaticket/backend/node_modules
 
@@ -223,9 +251,11 @@ frontend_restart_pm2() {
 
   sudo su - deploywhaticketplus <<EOF
   cd /home/deploywhaticketplus/whaticket/frontend
-  pm2 stop all
+  pm2 stop 0
+  pm2 stop 1
 
-  pm2 start all
+  pm2 start 0
+  pm2 start 1
 EOF
 
   sleep 2
@@ -279,7 +309,8 @@ backend_restart_pm2() {
 
   sudo su - deploywhaticketplus <<EOF
     cd /home/deploywhaticketplus/whaticket/backend
-    pm2 stop all
+    pm2 stop 0
+    pm2 stop 1
     sudo rm -rf /root/Whaticket-Saas-Completo
 EOF
 
@@ -294,8 +325,10 @@ EOF
 EOF
 
   sudo su - deploywhaticketplus <<EOF
-    pm2 start all
+    pm2 start 0
+    pm2 start 1
 EOF
 
   sleep 2
+  echo "${GREEN}Sistema Atualizado Com Sucesso!${NORMAL}"
 }
