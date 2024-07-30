@@ -42,7 +42,7 @@ print_banner() {
     print_centered "Compartilhar, vender ou fornecer essa solução" "$Green"
     print_centered "sem autorização é crime previsto no artigo 184" "$Green"
     print_centered "do código penal que descreve a conduta criminosa" "$Green"
-    print_centered "de infringir os direitos autorais da Whaticket Plus." "$Green"
+    print_centered "de infringir os direitos autorais do Whaticket Plus." "$Green"
     print_centered "PIRATEAR ESSA SOLUÇÃO É CRIME." "$Green"
     print_centered "© Whaticket Plus" "$Green"
 

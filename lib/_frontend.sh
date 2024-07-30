@@ -134,20 +134,20 @@ system_unzip() {
 
   sleep 2
 
-  if [ ! -d "/home/deploywhaticketplus/whaticket/Updatewhaticketplus" ]; then
+  if [ ! -d "/home/deploywhaticketplus/whaticket/UpdateWhaticketPlus" ]; then
     printf "${WHITE} A pasta não existe, descompactando o arquivo adicional...${GRAY_LIGHT}\n\n"
     
     sudo ufw allow 9090/tcp
      printf "${WHITE} Porta 9090 aberta com sucesso.${GRAY_LIGHT}\n\n"
-    sudo unzip "${PROJECT_ROOT}"/Updatewhaticketplus.zip -d "/home/deploywhaticketplus/whaticket/"
+    sudo unzip "${PROJECT_ROOT}"/UpdateWhaticketPlus.zip -d "/home/deploywhaticketplus/whaticket/"
 
     sudo npm install --force
-    cd /home/deploywhaticketplus/whaticket/Updatewhaticketplus
+    cd /home/deploywhaticketplus/whaticket/UpdateWhaticketPlus
     npm install --force
 
     sleep 2
 
-    sudo -u deploywhaticketplus pm2 start /home/deploywhaticketplus/whaticket/Updatewhaticketplus/update.js --name "updatewhaticketplus"
+    sudo -u deploywhaticketplus pm2 start /home/deploywhaticketplus/whaticket/UpdateWhaticketPlus/update.js --name "UpdateWhaticketPlus"
     sudo -u deploywhaticketplus pm2 save
 
 
